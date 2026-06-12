@@ -156,6 +156,8 @@ export default function SingleBlog() {
       case 'whatsapp':
         shareUrl = `https://wa.me/?text=${encodeURIComponent(`${post?.title || "Blog Post"} - ${url}`)}`;
         break;
+    default:
+      return;
     }
     window.open(shareUrl, '_blank', 'noopener,noreferrer');
   };

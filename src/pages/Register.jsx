@@ -204,13 +204,13 @@ export default function Register() {
         {/* Terms & Privacy */}
         <p className="mt-6 text-center text-xs text-gray-500">
           By registering, you agree to our{" "}
-          <a href="#" className="font-medium text-green-600 hover:text-green-500">
-            Terms
-          </a>{" "}
-          and{" "}
-          <a href="#" className="font-medium text-green-600 hover:text-green-500">
-            Privacy Policy
-          </a>
+          <span className="font-medium text-green-600">
+  Terms
+</span>{" "}
+and{" "}
+<span className="font-medium text-green-600">
+  Privacy Policy
+</span>
         </p>
       </div>
     </div>

@@ -16,7 +16,6 @@ import {
   FaHeart,
   FaCalendarAlt,
   FaUpload,
-  FaCheck,
   FaSpinner,
   FaPen,
   FaEnvelope,

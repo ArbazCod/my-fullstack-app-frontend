@@ -221,14 +221,14 @@ export default function Login() {
         </div>
 
         {/* Terms & Privacy */}
-        <div className="mt-6 text-center">
-          <p className="text-xs text-gray-500">
-            By signing in, you agree to our{" "}
-            <a href="#" className="text-blue-600 hover:text-blue-700">Terms</a>{" "}
-            and{" "}
-            <a href="#" className="text-blue-600 hover:text-blue-700">Privacy Policy</a>
-          </p>
-        </div>
+       <div className="mt-6 text-center">
+  <p className="text-xs text-gray-500">
+    By signing in, you agree to our{" "}
+    <span className="text-blue-600">Terms</span>
+    {" "}and{" "}
+    <span className="text-blue-600">Privacy Policy</span>
+  </p>
+</div>
       </div>
 
       {/* Blob Animation Styles */}
