@@ -1,70 +1,170 @@
-# Getting Started with Create React App
+# Full Stack Portfolio & Blogging Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern full-stack web application that combines a professional portfolio website with a feature-rich blogging platform. The application includes secure authentication, role-based authorization, content management, image uploads, user engagement features, and a responsive user interface.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+Frontend: Coming Soon
 
-### `npm start`
+Backend API:
+https://my-fullstack-app-backend-he88.onrender.com
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+### Portfolio Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Responsive portfolio website
+* Project showcase section
+* Contact page
+* Resume integration
+* Mobile-friendly design
 
-### `npm run build`
+### Blogging Platform
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* User registration and login
+* JWT authentication with secure cookies
+* Role-based access control
+* Create, edit, and delete blog posts
+* Categories and tags
+* Comment system
+* Review and rating system
+* User dashboard
+* Admin dashboard
+* Notifications
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Media Management
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Cloudinary image uploads
+* Profile photo management
+* Blog cover image uploads
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Tech Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Frontend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* React.js
+* React Router DOM
+* Axios
+* Tailwind CSS
+* Framer Motion
+* React Icons
+* EmailJS
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Backend
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* Node.js
+* Express.js
+* MongoDB Atlas
+* Mongoose
+* JWT Authentication
+* Cloudinary
+* Multer
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* GitHub
+* Render
+* MongoDB Atlas
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Screenshots
+
+### Home Page
+
+![Home](./screenshots/Home.png)
+
+### Projects Page
+
+![Projects](./screenshots/projects.png)
+
+### Blog Section
+
+![Blogs](./screenshots/blogs.png)
+
+### Registration Page
+
+![Register](./screenshots/Register.png)
+
+### Admin Dashboard
+
+![Admin Dashboard](./screenshots/AdminPanel.png)
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone <repository-url>
+cd frontend
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Environment Variables
+
+Create a .env file in the root directory:
+
+```env
+REACT_APP_API_URL=https://my-fullstack-app-backend-he88.onrender.com/api
+```
+
+### Run Development Server
+
+```bash
+npm start
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+---
+
+## Project Structure
+
+```text
+src/
+├── api/
+├── components/
+├── context/
+├── pages/
+├── routes/
+├── App.js
+└── index.js
+```
+
+---
+
+## Future Improvements
+
+* Rich text editor
+* Search and filtering
+* Dark mode
+* Real-time notifications
+* Social authentication
+* Analytics dashboard
+
+---
+
+## Author
+
+Arbaz Khan
+
+Mechanical Engineering Graduate
+Full Stack Developer
+AI & Machine Learning Enthusiast
+
+GitHub: ArbazCod
