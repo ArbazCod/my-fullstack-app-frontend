@@ -166,50 +166,70 @@ const initialProjects = [
     views: 45,
     likes: 9
   },
+
   {
-    id: 5,
-    title: "Portfolio & Blogging Platform",
-    shortDesc: "Full-stack CMS with authentication and SEO optimization.",
-    description: "Full-stack portfolio and blogging platform featuring secure authentication, admin dashboard, blog management, SEO optimization, user dashboard, contact system, and responsive design.",
-    problemSolved: "Creators and developers need a professional platform to showcase work and share knowledge. This CMS provides an all-in-one solution with blog management, project showcase, and user engagement features without vendor lock-in.",
-    keyFeatures: [
-      "JWT Authentication & Authorization",
-      "Admin Dashboard with analytics",
-      "Markdown blog post editor",
-      "SEO meta tag management",
-      "User comments & engagement",
-      "Contact form with email integration",
-      "Responsive design for all devices"
-    ],
-    architecture: {
-      frontend: "React 18 + Tailwind CSS",
-      backend: "Node.js + Express",
-      database: "MongoDB",
-      caching: "Redis"
-    },
-    challenges: [
-      "Implementing secure JWT refresh flow",
-      "Optimizing blog post SEO dynamically",
-      "Building a WYSIWYG-like markdown editor",
-      "Managing rate limiting for contact forms"
-    ],
-    learnings: [
-      "Full-stack authentication patterns",
-      "SEO optimization techniques for SPAs",
-      "Content management system architecture",
-      "Email service integration",
-      "Building reusable React components"
-    ],
-    techStack: ["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind CSS", "Redis"],
-    liveDemo: "https://your-portfolio.com",
-    github: "https://github.com/yourusername/portfolio-platform",
-    image: "/images/portfolio.png",
-    featured: true,
-    views: 156,
-    likes: 31
+  id: 5,
+  title: "Portfolio & Blogging Platform",
+  shortDesc: "Production-ready MERN platform with authentication, blogging, admin dashboard, and content management.",
+  description: "A full-stack portfolio and blogging platform built using the MERN stack. Features secure JWT authentication, role-based authorization, admin dashboard, blog management, comments, reviews, notifications, Cloudinary image uploads, MongoDB Atlas integration, and responsive design. Deployed using Vercel and Render.",
+  problemSolved: "Developers and content creators need a centralized platform to showcase projects, publish articles, manage content, and engage with users. This application combines portfolio management, blogging, authentication, and administration into a single scalable solution.",
+  keyFeatures: [
+    "JWT Authentication & Authorization",
+    "Role-Based Access Control",
+    "Admin Dashboard",
+    "Blog Management System",
+    "Comments & Reviews",
+    "Notification System",
+    "Cloudinary Image Uploads",
+    "MongoDB Atlas Integration",
+    "Responsive UI",
+    "User Dashboard"
+  ],
+  architecture: {
+    frontend: "React.js + Tailwind CSS",
+    backend: "Node.js + Express.js",
+    database: "MongoDB Atlas",
+    deployment: "Vercel + Render"
   },
+  challenges: [
+    "Implementing secure JWT authentication",
+    "Managing protected routes and user roles",
+    "Handling image uploads with Cloudinary",
+    "Configuring CORS and production cookies",
+    "Deploying frontend and backend independently"
+  ],
+  learnings: [
+    "Full-stack MERN architecture",
+    "Authentication & Authorization",
+    "REST API Development",
+    "MongoDB Schema Design",
+    "Cloud Deployment Workflows",
+    "Frontend–Backend Integration"
+  ],
+  techStack: [
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB Atlas",
+    "JWT",
+    "Cloudinary",
+    "Axios",
+    "Tailwind CSS",
+    "Render",
+    "Vercel"
+  ],
+
+  github: "https://github.com/ArbazCod/my-fullstack-app-frontend",
+  backendGithub: "https://github.com/ArbazCod/my-fullstack-app-backend",
+
+  image: "/images/portfolio.png",
+  featured: true,
+  views: 156,
+  likes: 31
+},
+
   {
-    id: 7,
+    id: 6,
     type: "certificate",
     title: "Delta – Full Stack Web Development",
     shortDesc: "MERN Stack Web Development Certification from Apna College.",
