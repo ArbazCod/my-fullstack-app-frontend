@@ -27,10 +27,15 @@ import Footer from "./components/footer.jsx";
 import RequireAuth from "./routes/RequireAuth";
 import AdminRoute from "./routes/AdminRoute";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 function App() {
   return (
     <>
       <Navbar />
+
+
+       <ScrollToTop />
 
       <Routes>
 

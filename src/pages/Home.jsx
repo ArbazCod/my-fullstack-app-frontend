@@ -64,7 +64,7 @@ export default function Home() {
                 <FaEnvelope className="hover:text-red-600 transition" />
               </a>
 
-              <a href="/resume.pdf" download>
+              <a href="/Arbaz_Khan_Resume.pdf" download>
                 <FaFileDownload className="hover:text-green-600 transition" />
               </a>
             </div>

@@ -165,7 +165,7 @@ const Contact = () => {
                   <span>GitHub</span>
                   </a>
                 <a
-    href="/resume.pdf"
+    href="/Arbaz_Khan_Resume.pdf"
     target="_blank"
     rel="noopener noreferrer"
     className="social-link"
