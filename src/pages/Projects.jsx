@@ -166,68 +166,64 @@ const initialProjects = [
     views: 45,
     likes: 9
   },
-
   {
-  id: 5,
-  title: "Portfolio & Blogging Platform",
-  shortDesc: "Production-ready MERN platform with authentication, blogging, admin dashboard, and content management.",
-  description: "A full-stack portfolio and blogging platform built using the MERN stack. Features secure JWT authentication, role-based authorization, admin dashboard, blog management, comments, reviews, notifications, Cloudinary image uploads, MongoDB Atlas integration, and responsive design. Deployed using Vercel and Render.",
-  problemSolved: "Developers and content creators need a centralized platform to showcase projects, publish articles, manage content, and engage with users. This application combines portfolio management, blogging, authentication, and administration into a single scalable solution.",
-  keyFeatures: [
-    "JWT Authentication & Authorization",
-    "Role-Based Access Control",
-    "Admin Dashboard",
-    "Blog Management System",
-    "Comments & Reviews",
-    "Notification System",
-    "Cloudinary Image Uploads",
-    "MongoDB Atlas Integration",
-    "Responsive UI",
-    "User Dashboard"
-  ],
-  architecture: {
-    frontend: "React.js + Tailwind CSS",
-    backend: "Node.js + Express.js",
-    database: "MongoDB Atlas",
-    deployment: "Vercel + Render"
+    id: 5,
+    title: "Portfolio & Blogging Platform",
+    shortDesc: "Production-ready MERN platform with authentication, blogging, admin dashboard, and content management.",
+    description: "A full-stack portfolio and blogging platform built using the MERN stack. Features secure JWT authentication, role-based authorization, admin dashboard, blog management, comments, reviews, notifications, Cloudinary image uploads, MongoDB Atlas integration, and responsive design. Deployed using Vercel and Render.",
+    problemSolved: "Developers and content creators need a centralized platform to showcase projects, publish articles, manage content, and engage with users. This application combines portfolio management, blogging, authentication, and administration into a single scalable solution.",
+    keyFeatures: [
+      "JWT Authentication & Authorization",
+      "Role-Based Access Control",
+      "Admin Dashboard",
+      "Blog Management System",
+      "Comments & Reviews",
+      "Notification System",
+      "Cloudinary Image Uploads",
+      "MongoDB Atlas Integration",
+      "Responsive UI",
+      "User Dashboard"
+    ],
+    architecture: {
+      frontend: "React.js + Tailwind CSS",
+      backend: "Node.js + Express.js",
+      database: "MongoDB Atlas",
+      deployment: "Vercel + Render"
+    },
+    challenges: [
+      "Implementing secure JWT authentication",
+      "Managing protected routes and user roles",
+      "Handling image uploads with Cloudinary",
+      "Configuring CORS and production cookies",
+      "Deploying frontend and backend independently"
+    ],
+    learnings: [
+      "Full-stack MERN architecture",
+      "Authentication & Authorization",
+      "REST API Development",
+      "MongoDB Schema Design",
+      "Cloud Deployment Workflows",
+      "Frontend–Backend Integration"
+    ],
+    techStack: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB Atlas",
+      "JWT",
+      "Cloudinary",
+      "Axios",
+      "Tailwind CSS",
+      "Render",
+      "Vercel"
+    ],
+    github: "https://github.com/ArbazCod/my-fullstack-app-frontend",
+    backendGithub: "https://github.com/ArbazCod/my-fullstack-app-backend",
+    image: "/images/portfolio.png",
+    featured: true,
+    views: 156,
+    likes: 31
   },
-  challenges: [
-    "Implementing secure JWT authentication",
-    "Managing protected routes and user roles",
-    "Handling image uploads with Cloudinary",
-    "Configuring CORS and production cookies",
-    "Deploying frontend and backend independently"
-  ],
-  learnings: [
-    "Full-stack MERN architecture",
-    "Authentication & Authorization",
-    "REST API Development",
-    "MongoDB Schema Design",
-    "Cloud Deployment Workflows",
-    "Frontend–Backend Integration"
-  ],
-  techStack: [
-    "React",
-    "Node.js",
-    "Express",
-    "MongoDB Atlas",
-    "JWT",
-    "Cloudinary",
-    "Axios",
-    "Tailwind CSS",
-    "Render",
-    "Vercel"
-  ],
-
-  github: "https://github.com/ArbazCod/my-fullstack-app-frontend",
-  backendGithub: "https://github.com/ArbazCod/my-fullstack-app-backend",
-
-  image: "/images/portfolio.png",
-  featured: true,
-  views: 156,
-  likes: 31
-},
-
   {
     id: 6,
     type: "certificate",
@@ -273,7 +269,6 @@ const initialProjects = [
   }
 ];
 
-// Advanced localStorage management with user-specific data
 const STORAGE_KEYS = {
   PROJECT_STATS: 'projectStats',
   USER_LIKES: 'userLikes',
@@ -541,33 +536,66 @@ export default function Projects() {
                       </button>
                     ) : (
                       <>
-                        <a
-                          href={project.liveDemo}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="btn btn-primary"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" y1="14" x2="21" y2="3" />
-                          </svg>
-                          Live Demo
-                        </a>
+                        {project.liveDemo && (
+                          <a
+                            href={project.liveDemo}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="btn btn-primary"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                              <polyline points="15 3 21 3 21 9" />
+                              <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                            Live Demo
+                          </a>
+                        )}
 
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="btn btn-secondary"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
-                          </svg>
-                          GitHub
-                        </a>
+                        {project.backendGithub ? (
+                          <div style={{ display: 'flex', gap: '8px', flex: 1 }}>
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="btn btn-secondary"
+                              onClick={(e) => e.stopPropagation()}
+                              style={{ flex: 1 }}
+                            >
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
+                              </svg>
+                              Frontend
+                            </a>
+                            <a
+                              href={project.backendGithub}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="btn btn-secondary"
+                              onClick={(e) => e.stopPropagation()}
+                              style={{ flex: 1 }}
+                            >
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
+                              </svg>
+                              Backend
+                            </a>
+                          </div>
+                        ) : (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="btn btn-secondary"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
+                            </svg>
+                            GitHub
+                          </a>
+                        )}
                       </>
                     )}
                   </div>
@@ -697,20 +725,40 @@ export default function Projects() {
 
             {selectedProject.type !== "certificate" && (
               <div className="modal-footer">
-                <a href={selectedProject.liveDemo} target="_blank" rel="noreferrer" className="btn btn-primary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
-                  </svg>
-                  Live Demo
-                </a>
-                <a href={selectedProject.github} target="_blank" rel="noreferrer" className="btn btn-secondary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
-                  </svg>
-                  GitHub Repository
-                </a>
+                {selectedProject.liveDemo && (
+                  <a href={selectedProject.liveDemo} target="_blank" rel="noreferrer" className="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    Live Demo
+                  </a>
+                )}
+                
+                {selectedProject.backendGithub ? (
+                  <>
+                    <a href={selectedProject.github} target="_blank" rel="noreferrer" className="btn btn-secondary">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
+                      </svg>
+                      Frontend Repository
+                    </a>
+                    <a href={selectedProject.backendGithub} target="_blank" rel="noreferrer" className="btn btn-secondary">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
+                      </svg>
+                      Backend Repository
+                    </a>
+                  </>
+                ) : (
+                  <a href={selectedProject.github} target="_blank" rel="noreferrer" className="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
+                    </svg>
+                    GitHub Repository
+                  </a>
+                )}
               </div>
             )}
           </div>
