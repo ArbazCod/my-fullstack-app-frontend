@@ -1,6 +1,84 @@
 import React, { useState, useEffect, useCallback } from "react";
 
 const initialProjects = [
+    {
+  id: 1,
+  title: "TradeHub",
+  shortDesc: "Production-ready virtual stock trading platform with real-time analytics, secure authentication, and portfolio management.",
+
+  description:
+    "TradeHub is a full-stack virtual stock trading platform featuring JWT authentication, portfolio tracking, watchlists, wallet management, real-time stock updates, analytics dashboards, Razorpay integration, AI-powered insights, Socket.IO notifications, and a comprehensive admin dashboard.",
+
+  problemSolved:
+    "TradeHub provides a realistic stock trading simulation where users can securely manage portfolios, monitor investments, analyze performance, receive real-time updates, and manage virtual funds through an intuitive and scalable platform.",
+
+  keyFeatures: [
+    "JWT Authentication & Authorization",
+    "Virtual Stock Trading",
+    "Portfolio Management",
+    "Real-Time Stock Updates",
+    "Advanced Analytics Dashboard",
+    "Watchlist Management",
+    "Wallet & Transaction History",
+    "Razorpay Wallet Recharge",
+    "Cloudinary Profile Upload",
+    "Admin Dashboard",
+    "User Feedback System",
+    "Interactive Charts"
+  ],
+
+  architecture: {
+    frontend: "React 19 + Vite + Tailwind CSS",
+    backend: "Node.js + Express.js + Socket.IO",
+    database: "MongoDB with Mongoose ODM",
+    deployment: "Vercel (Frontend) + Render (Backend)"
+  },
+
+  challenges: [
+    "Implementing secure JWT authentication",
+    "Managing real-time stock updates",
+    "Building scalable portfolio and wallet management",
+    "Integrating Razorpay payment gateway",
+    "Deploying with Vercel, Render, and MongoDB Atlas"
+  ],
+
+  learnings: [
+    "Production-grade MERN architecture",
+    "REST API design",
+    "Socket.IO real-time communication",
+    "MongoDB optimization",
+    "Cloud deployment",
+    "CORS and environment configuration"
+  ],
+
+  techStack: [
+    "React",
+    "Vite",
+    "Tailwind CSS",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Socket.IO",
+    "JWT",
+    "Razorpay",
+    "Cloudinary",
+    "Chart.js"
+  ],
+
+  liveDemo: "https://tradehub-frontend-drab.vercel.app",
+
+  github: "https://github.com/ArbazCod",
+
+  image: "/images/tradehub.png",
+
+  featured: true,
+
+  views: 0,
+
+  likes: 0
+},
+  
+  
   {
     id: 1,
     title: "ShopHub E-Commerce",
