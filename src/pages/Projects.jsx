@@ -80,7 +80,7 @@ const initialProjects = [
   
   
   {
-    id: 1,
+    id: 2,
     title: "ShopHub E-Commerce",
     shortDesc: "Production-ready MERN eCommerce platform with secure authentication and payment processing.",
     description: "Production-ready MERN eCommerce platform featuring JWT authentication, Razorpay payment gateway, admin analytics dashboard, Cloudinary media storage, invoice generation, and secure REST APIs.",
@@ -122,7 +122,7 @@ const initialProjects = [
     likes: 24
   },
   {
-    id: 2,
+    id: 3,
     title: "SmartCart Customer Segmentation",
     shortDesc: "ML-powered customer segmentation dashboard using unsupervised learning.",
     description: "Advanced customer segmentation dashboard using Unsupervised Machine Learning, PCA, and K-Means Clustering to identify customer groups and generate actionable business insights through interactive visualizations.",
@@ -163,7 +163,7 @@ const initialProjects = [
     likes: 17
   },
   {
-    id: 3,
+    id: 4,
     title: "InsightBank Analytics",
     shortDesc: "Enterprise banking analytics platform with ML-driven insights.",
     description: "Enterprise banking analytics platform using Python, SQL, Streamlit, Plotly, and Machine Learning to generate customer insights, transaction analysis, KPI dashboards, and business intelligence reports.",
@@ -204,7 +204,7 @@ const initialProjects = [
     likes: 12
   },
   {
-    id: 4,
+    id: 5,
     title: "HealthRisk Predictor",
     shortDesc: "AI-powered healthcare risk prediction system.",
     description: "AI-powered healthcare risk prediction system using supervised machine learning to analyze patient health data and predict potential risk levels through interactive dashboards.",
@@ -245,7 +245,7 @@ const initialProjects = [
     likes: 9
   },
   {
-    id: 5,
+    id: 6,
     title: "Portfolio & Blogging Platform",
     shortDesc: "Production-ready MERN platform with authentication, blogging, admin dashboard, and content management.",
     description: "A full-stack portfolio and blogging platform built using the MERN stack. Features secure JWT authentication, role-based authorization, admin dashboard, blog management, comments, reviews, notifications, Cloudinary image uploads, MongoDB Atlas integration, and responsive design. Deployed using Vercel and Render.",
@@ -303,7 +303,7 @@ const initialProjects = [
     likes: 31
   },
   {
-    id: 6,
+    id: 7,
     type: "certificate",
     title: "Delta – Full Stack Web Development",
     shortDesc: "MERN Stack Web Development Certification from Apna College.",
@@ -344,7 +344,74 @@ const initialProjects = [
     featured: true,
     views: 0,
     likes: 0
-  }
+  },
+
+  {
+  id: 8,
+  type: "certificate",
+  title: "Prime (AI/ML)",
+  shortDesc: "Artificial Intelligence & Machine Learning Certification from Apna College.",
+
+  description:
+    "Successfully completed the Prime (AI/ML) program offered by Apna College. The program covered Python programming, data analysis, machine learning, deep learning fundamentals, and practical AI development through hands-on projects.",
+
+  problemSolved:
+    "Completed industry-oriented training focused on building machine learning models, analyzing real-world datasets, and applying modern AI workflows using Python and industry-standard machine learning libraries.",
+
+  keyFeatures: [
+    "Python Programming",
+    "Data Analysis",
+    "Machine Learning",
+    "Supervised Learning",
+    "Unsupervised Learning",
+    "Deep Learning Fundamentals",
+    "Model Evaluation",
+    "Hands-on AI Projects"
+  ],
+
+  architecture: {
+    frontend: "Jupyter Notebook",
+    backend: "Python + Scikit-learn",
+    database: "CSV Datasets",
+    deployment: "GitHub"
+  },
+
+  challenges: [
+    "Data preprocessing",
+    "Training machine learning models",
+    "Feature engineering",
+    "Model evaluation and optimization"
+  ],
+
+  learnings: [
+    "Python for AI",
+    "Data Analysis",
+    "Machine Learning Algorithms",
+    "Deep Learning Basics",
+    "Model Evaluation",
+    "AI Problem Solving"
+  ],
+
+  techStack: [
+    "Python",
+    "NumPy",
+    "Pandas",
+    "Matplotlib",
+    "Scikit-learn",
+    "Jupyter Notebook",
+    "Git",
+    "GitHub"
+  ],
+
+  issuer: "Apna College",
+  certificateId: "6a5c48a4bc34daa74c00b51a",
+
+  image: "/prime-ai-ml-certificate.png",
+
+  featured: true,
+  views: 0,
+  likes: 0
+}
 ];
 
 const STORAGE_KEYS = {
