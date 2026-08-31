@@ -373,8 +373,81 @@ github: "https://github.com/ArbazCod/WebScrapeX",
     views: 156,
     likes: 31
   },
+
   {
-    id: 8,
+  id: 8,
+
+  title: "Generative AI Video Production",
+
+  shortDesc: "Cinematic AI-powered video production with consistent characters, professional narration, and seamless scene continuity.",
+
+  description: "A creative Generative AI video production portfolio focused on developing cinematic, story-driven visual content. The workflow combines AI-assisted storytelling, prompt engineering, character consistency, scene design, voice narration, visual generation, and post-production to create polished videos with strong narrative and visual continuity.",
+
+  problemSolved: "Generating individual AI video clips is relatively easy, but maintaining character identity, visual consistency, narrative flow, and professional storytelling across multiple scenes is a significant challenge. This project focuses on producing cohesive AI-powered videos that feel like intentionally directed productions rather than disconnected generated clips.",
+
+  keyFeatures: [
+    "Cinematic AI Video Generation",
+    "Story-Driven Visual Production",
+    "Character Consistency Across Scenes",
+    "Scene-to-Scene Visual Continuity",
+    "Professional AI Voice Narration",
+    "Prompt Engineering & Scene Direction",
+    "AI-Assisted Storyboarding",
+    "Cinematic Composition & Visual Design",
+    "AI Video Editing & Post-Production",
+    "Social Media & Brand-Ready Content"
+  ],
+
+  architecture: {
+    preProduction: "Concept → Script → Storyboard → Scene Planning",
+    visualProduction: "Prompt Engineering → AI Image & Video Generation",
+    consistency: "Character, Environment & Visual Style Consistency",
+    narration: "AI Voice Generation → Narration Synchronization",
+    postProduction: "Video Editing → Scene Assembly → Final Production",
+    distribution: "Social Media & Digital Content Platforms"
+  },
+
+  challenges: [
+    "Maintaining consistent character identity throughout multiple scenes",
+    "Preserving visual style, environment, and composition across scenes",
+    "Creating natural transitions and continuity between generated clips",
+    "Synchronizing narration with visual storytelling",
+    "Transforming separate AI-generated scenes into a cohesive cinematic production"
+  ],
+
+  learnings: [
+    "Generative AI video production workflows",
+    "Advanced prompt engineering for visual consistency",
+    "Character and environment consistency techniques",
+    "AI-assisted storytelling and storyboarding",
+    "Cinematic scene composition and direction",
+    "AI voice narration and synchronization",
+    "AI video editing and post-production"
+  ],
+
+  techStack: [
+    "Generative AI",
+    "Prompt Engineering",
+    "AI Video Generation",
+    "AI Image Generation",
+    "AI Voice Generation",
+    "Storyboarding",
+    "Video Editing",
+    "Visual Storytelling"
+  ],
+
+  liveDemo: "https://www.facebook.com/profile.php?id=61592781398415",
+
+  image: "/images/framefable.png",
+
+  featured: true,
+
+  views: 20,
+
+  likes: 13
+},
+  {
+    id: 9,
     type: "certificate",
     title: "Delta – Full Stack Web Development",
     shortDesc: "MERN Stack Web Development Certification from Apna College.",
@@ -418,7 +491,7 @@ github: "https://github.com/ArbazCod/WebScrapeX",
   },
 
   {
-  id: 9,
+  id: 10,
   type: "certificate",
   title: "Prime (AI/ML)",
   shortDesc: "Artificial Intelligence & Machine Learning Certification from Apna College.",
