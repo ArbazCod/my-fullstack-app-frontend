@@ -121,8 +121,79 @@ const initialProjects = [
     views: 128,
     likes: 24
   },
+
   {
-    id: 3,
+  id: 3,
+  title: "WebScrapeX — E-Commerce Product Entity Resolution",
+  shortDesc: "End-to-end ML system for e-commerce product matching and duplicate detection.",
+  description: "End-to-end Machine Learning system for identifying matching products and detecting duplicate product listings across e-commerce data. The pipeline covers web scraping, data cleaning, feature engineering, entity matching, Random Forest classification, evaluation, and deployment.",
+  problemSolved: "E-commerce platforms often contain duplicate or inconsistent product listings from different sources. WebScrapeX addresses this challenge by automatically determining whether two product records refer to the same product, helping improve catalog quality and reduce duplicate listings.",
+  keyFeatures: [
+    "Web Scraping & Large-Scale Data Processing",
+    "Data Cleaning & Preprocessing",
+    "Product Entity Resolution",
+    "Duplicate Product Detection",
+    "11 Engineered Matching Features",
+    "Random Forest Classification Model",
+    "5-Fold Cross-Validation",
+    "Interactive Streamlit Deployment"
+  ],
+  architecture: {
+    dataSource: "Web-scraped e-commerce product data",
+    preprocessing: "Python + Pandas + NumPy",
+    featureEngineering: "11 product matching features",
+    model: "Random Forest Classifier",
+    evaluation: "Accuracy, Precision, Recall, ROC-AUC & 5-Fold CV",
+    deployment: "Streamlit"
+  },
+  challenges: [
+    "Processing an initial ~19 GB web-scraped dataset",
+    "Cleaning and standardizing inconsistent product data",
+    "Designing meaningful features for product similarity",
+    "Handling large-scale product matching efficiently",
+    "Building a reliable classification pipeline for duplicate detection",
+    "Evaluating model performance using multiple classification metrics"
+  ],
+  learnings: [
+    "End-to-end Machine Learning pipeline development",
+    "Large-scale data cleaning and preprocessing",
+    "Entity resolution and record linkage techniques",
+    "Feature engineering for product matching",
+    "Random Forest model development and evaluation",
+    "Cross-validation and classification metrics",
+    "Deploying ML applications with Streamlit"
+  ],
+  techStack: [
+    "Python",
+    "Pandas",
+    "NumPy",
+    "Scikit-learn",
+    "Random Forest",
+    "Feature Engineering",
+    "Entity Resolution",
+    "Streamlit"
+  ],
+  performance: {
+    accuracy: "97.69%",
+    precision: "99.05%",
+    recall: "96.30%",
+    rocAuc: "97.54%",
+    crossValidation: "97.68%",
+    cleanedRecords: "171,200",
+    matchingFeatures: "11",
+    initialDataset: "~19 GB"
+  },
+ liveDemo: "https://webscrapex.streamlit.app/",
+github: "https://github.com/ArbazCod/WebScrapeX",
+  image: "/images/webscrapex.png",
+  featured: true,
+  views: 0,
+  likes: 0
+},
+
+
+  {
+    id: 4,
     title: "SmartCart Customer Segmentation",
     shortDesc: "ML-powered customer segmentation dashboard using unsupervised learning.",
     description: "Advanced customer segmentation dashboard using Unsupervised Machine Learning, PCA, and K-Means Clustering to identify customer groups and generate actionable business insights through interactive visualizations.",
@@ -163,7 +234,7 @@ const initialProjects = [
     likes: 17
   },
   {
-    id: 4,
+    id: 5,
     title: "InsightBank Analytics",
     shortDesc: "Enterprise banking analytics platform with ML-driven insights.",
     description: "Enterprise banking analytics platform using Python, SQL, Streamlit, Plotly, and Machine Learning to generate customer insights, transaction analysis, KPI dashboards, and business intelligence reports.",
@@ -204,7 +275,7 @@ const initialProjects = [
     likes: 12
   },
   {
-    id: 5,
+    id: 6,
     title: "HealthRisk Predictor",
     shortDesc: "AI-powered healthcare risk prediction system.",
     description: "AI-powered healthcare risk prediction system using supervised machine learning to analyze patient health data and predict potential risk levels through interactive dashboards.",
@@ -245,7 +316,7 @@ const initialProjects = [
     likes: 9
   },
   {
-    id: 6,
+    id: 7,
     title: "Portfolio & Blogging Platform",
     shortDesc: "Production-ready MERN platform with authentication, blogging, admin dashboard, and content management.",
     description: "A full-stack portfolio and blogging platform built using the MERN stack. Features secure JWT authentication, role-based authorization, admin dashboard, blog management, comments, reviews, notifications, Cloudinary image uploads, MongoDB Atlas integration, and responsive design. Deployed using Vercel and Render.",
@@ -303,7 +374,7 @@ const initialProjects = [
     likes: 31
   },
   {
-    id: 7,
+    id: 8,
     type: "certificate",
     title: "Delta – Full Stack Web Development",
     shortDesc: "MERN Stack Web Development Certification from Apna College.",
@@ -347,7 +418,7 @@ const initialProjects = [
   },
 
   {
-  id: 8,
+  id: 9,
   type: "certificate",
   title: "Prime (AI/ML)",
   shortDesc: "Artificial Intelligence & Machine Learning Certification from Apna College.",
