@@ -1,84 +1,55 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 
 const initialProjects = [
-    {
-  id: 1,
-  title: "TradeHub",
-  shortDesc: "Production-ready virtual stock trading platform with real-time analytics, secure authentication, and portfolio management.",
-
-  description:
-    "TradeHub is a full-stack virtual stock trading platform featuring JWT authentication, portfolio tracking, watchlists, wallet management, real-time stock updates, analytics dashboards, Razorpay integration, AI-powered insights, Socket.IO notifications, and a comprehensive admin dashboard.",
-
-  problemSolved:
-    "TradeHub provides a realistic stock trading simulation where users can securely manage portfolios, monitor investments, analyze performance, receive real-time updates, and manage virtual funds through an intuitive and scalable platform.",
-
-  keyFeatures: [
-    "JWT Authentication & Authorization",
-    "Virtual Stock Trading",
-    "Portfolio Management",
-    "Real-Time Stock Updates",
-    "Advanced Analytics Dashboard",
-    "Watchlist Management",
-    "Wallet & Transaction History",
-    "Razorpay Wallet Recharge",
-    "Cloudinary Profile Upload",
-    "Admin Dashboard",
-    "User Feedback System",
-    "Interactive Charts"
-  ],
-
-  architecture: {
-    frontend: "React 19 + Vite + Tailwind CSS",
-    backend: "Node.js + Express.js + Socket.IO",
-    database: "MongoDB with Mongoose ODM",
-    deployment: "Vercel (Frontend) + Render (Backend)"
+  {
+    id: 1,
+    title: "TradeHub",
+    shortDesc: "Production-ready virtual stock trading platform with real-time analytics, secure authentication, and portfolio management.",
+    description: "TradeHub is a full-stack virtual stock trading platform featuring JWT authentication, portfolio tracking, watchlists, wallet management, real-time stock updates, analytics dashboards, Razorpay integration, AI-powered insights, Socket.IO notifications, and a comprehensive admin dashboard.",
+    problemSolved: "TradeHub provides a realistic stock trading simulation where users can securely manage portfolios, monitor investments, analyze performance, receive real-time updates, and manage virtual funds through an intuitive and scalable platform.",
+    keyFeatures: [
+      "JWT Authentication & Authorization",
+      "Virtual Stock Trading",
+      "Portfolio Management",
+      "Real-Time Stock Updates",
+      "Advanced Analytics Dashboard",
+      "Watchlist Management",
+      "Wallet & Transaction History",
+      "Razorpay Wallet Recharge",
+      "Cloudinary Profile Upload",
+      "Admin Dashboard",
+      "User Feedback System",
+      "Interactive Charts"
+    ],
+    architecture: {
+      frontend: "React 19 + Vite + Tailwind CSS",
+      backend: "Node.js + Express.js + Socket.IO",
+      database: "MongoDB with Mongoose ODM",
+      deployment: "Vercel (Frontend) + Render (Backend)"
+    },
+    challenges: [
+      "Implementing secure JWT authentication",
+      "Managing real-time stock updates",
+      "Building scalable portfolio and wallet management",
+      "Integrating Razorpay payment gateway",
+      "Deploying with Vercel, Render, and MongoDB Atlas"
+    ],
+    learnings: [
+      "Production-grade MERN architecture",
+      "REST API design",
+      "Socket.IO real-time communication",
+      "MongoDB optimization",
+      "Cloud deployment",
+      "CORS and environment configuration"
+    ],
+    techStack: ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Socket.IO", "JWT", "Razorpay", "Cloudinary", "Chart.js"],
+    liveDemo: "https://tradehub-frontend-drab.vercel.app",
+    github: "https://github.com/ArbazCod",
+    image: "/images/tradehub.png",
+    featured: true,
+    views: 0,
+    likes: 0
   },
-
-  challenges: [
-    "Implementing secure JWT authentication",
-    "Managing real-time stock updates",
-    "Building scalable portfolio and wallet management",
-    "Integrating Razorpay payment gateway",
-    "Deploying with Vercel, Render, and MongoDB Atlas"
-  ],
-
-  learnings: [
-    "Production-grade MERN architecture",
-    "REST API design",
-    "Socket.IO real-time communication",
-    "MongoDB optimization",
-    "Cloud deployment",
-    "CORS and environment configuration"
-  ],
-
-  techStack: [
-    "React",
-    "Vite",
-    "Tailwind CSS",
-    "Node.js",
-    "Express",
-    "MongoDB",
-    "Socket.IO",
-    "JWT",
-    "Razorpay",
-    "Cloudinary",
-    "Chart.js"
-  ],
-
-  liveDemo: "https://tradehub-frontend-drab.vercel.app",
-
-  github: "https://github.com/ArbazCod",
-
-  image: "/images/tradehub.png",
-
-  featured: true,
-
-  views: 0,
-
-  likes: 0
-},
-  
-  
   {
     id: 2,
     title: "ShopHub E-Commerce",
@@ -121,77 +92,63 @@ const initialProjects = [
     views: 128,
     likes: 24
   },
-
   {
-  id: 3,
-  title: "WebScrapeX — E-Commerce Product Entity Resolution",
-  shortDesc: "End-to-end ML system for e-commerce product matching and duplicate detection.",
-  description: "End-to-end Machine Learning system for identifying matching products and detecting duplicate product listings across e-commerce data. The pipeline covers web scraping, data cleaning, feature engineering, entity matching, Random Forest classification, evaluation, and deployment.",
-  problemSolved: "E-commerce platforms often contain duplicate or inconsistent product listings from different sources. WebScrapeX addresses this challenge by automatically determining whether two product records refer to the same product, helping improve catalog quality and reduce duplicate listings.",
-  keyFeatures: [
-    "Web Scraping & Large-Scale Data Processing",
-    "Data Cleaning & Preprocessing",
-    "Product Entity Resolution",
-    "Duplicate Product Detection",
-    "11 Engineered Matching Features",
-    "Random Forest Classification Model",
-    "5-Fold Cross-Validation",
-    "Interactive Streamlit Deployment"
-  ],
-  architecture: {
-    dataSource: "Web-scraped e-commerce product data",
-    preprocessing: "Python + Pandas + NumPy",
-    featureEngineering: "11 product matching features",
-    model: "Random Forest Classifier",
-    evaluation: "Accuracy, Precision, Recall, ROC-AUC & 5-Fold CV",
-    deployment: "Streamlit"
+    id: 3,
+    title: "WebScrapeX — E-Commerce Product Entity Resolution",
+    shortDesc: "End-to-end ML system for e-commerce product matching and duplicate detection.",
+    description: "End-to-end Machine Learning system for identifying matching products and detecting duplicate product listings across e-commerce data. The pipeline covers web scraping, data cleaning, feature engineering, entity matching, Random Forest classification, evaluation, and deployment.",
+    problemSolved: "E-commerce platforms often contain duplicate or inconsistent product listings from different sources. WebScrapeX addresses this challenge by automatically determining whether two product records refer to the same product, helping improve catalog quality and reduce duplicate listings.",
+    keyFeatures: [
+      "Web Scraping & Large-Scale Data Processing",
+      "Data Cleaning & Preprocessing",
+      "Product Entity Resolution",
+      "Duplicate Product Detection",
+      "11 Engineered Matching Features",
+      "Random Forest Classification Model",
+      "5-Fold Cross-Validation",
+      "Interactive Streamlit Deployment"
+    ],
+    architecture: {
+      frontend: "Streamlit",
+      backend: "Python + Scikit-Learn",
+      database: "Web-scraped e-commerce product data",
+      deployment: "Streamlit Cloud"
+    },
+    challenges: [
+      "Processing an initial ~19 GB web-scraped dataset",
+      "Cleaning and standardizing inconsistent product data",
+      "Designing meaningful features for product similarity",
+      "Handling large-scale product matching efficiently",
+      "Building a reliable classification pipeline for duplicate detection",
+      "Evaluating model performance using multiple classification metrics"
+    ],
+    learnings: [
+      "End-to-end Machine Learning pipeline development",
+      "Large-scale data cleaning and preprocessing",
+      "Entity resolution and record linkage techniques",
+      "Feature engineering for product matching",
+      "Random Forest model development and evaluation",
+      "Cross-validation and classification metrics",
+      "Deploying ML applications with Streamlit"
+    ],
+    techStack: ["Python", "Pandas", "NumPy", "Scikit-learn", "Random Forest", "Feature Engineering", "Entity Resolution", "Streamlit"],
+    performance: {
+      accuracy: "97.69%",
+      precision: "99.05%",
+      recall: "96.30%",
+      rocAuc: "97.54%",
+      crossValidation: "97.68%",
+      cleanedRecords: "171,200",
+      matchingFeatures: "11",
+      initialDataset: "~19 GB"
+    },
+    liveDemo: "https://webscrapex.streamlit.app/",
+    github: "https://github.com/ArbazCod/WebScrapeX",
+    image: "/images/webscrapex.png",
+    featured: true,
+    views: 0,
+    likes: 0
   },
-  challenges: [
-    "Processing an initial ~19 GB web-scraped dataset",
-    "Cleaning and standardizing inconsistent product data",
-    "Designing meaningful features for product similarity",
-    "Handling large-scale product matching efficiently",
-    "Building a reliable classification pipeline for duplicate detection",
-    "Evaluating model performance using multiple classification metrics"
-  ],
-  learnings: [
-    "End-to-end Machine Learning pipeline development",
-    "Large-scale data cleaning and preprocessing",
-    "Entity resolution and record linkage techniques",
-    "Feature engineering for product matching",
-    "Random Forest model development and evaluation",
-    "Cross-validation and classification metrics",
-    "Deploying ML applications with Streamlit"
-  ],
-  techStack: [
-    "Python",
-    "Pandas",
-    "NumPy",
-    "Scikit-learn",
-    "Random Forest",
-    "Feature Engineering",
-    "Entity Resolution",
-    "Streamlit"
-  ],
-  performance: {
-    accuracy: "97.69%",
-    precision: "99.05%",
-    recall: "96.30%",
-    rocAuc: "97.54%",
-    crossValidation: "97.68%",
-    cleanedRecords: "171,200",
-    matchingFeatures: "11",
-    initialDataset: "~19 GB"
-  },
- liveDemo: "https://webscrapex.streamlit.app/",
-github: "https://github.com/ArbazCod/WebScrapeX",
-  image: "/images/webscrapex.png",
-  featured: true,
-  views: 0,
-  likes: 0
-},
-
-
   {
     id: 4,
     title: "SmartCart Customer Segmentation",
@@ -209,8 +166,8 @@ github: "https://github.com/ArbazCod/WebScrapeX",
     architecture: {
       frontend: "Streamlit",
       backend: "Python + Scikit-Learn",
-      dataProcessing: "Pandas + NumPy",
-      visualization: "Plotly + Matplotlib"
+      database: "CSV Data Upload",
+      deployment: "Streamlit Cloud"
     },
     challenges: [
       "Determining optimal K value using elbow method and silhouette score",
@@ -251,7 +208,7 @@ github: "https://github.com/ArbazCod/WebScrapeX",
       frontend: "Streamlit",
       backend: "Python + SQLAlchemy",
       database: "PostgreSQL",
-      analytics: "Pandas + Scikit-Learn"
+      deployment: "Streamlit Cloud"
     },
     challenges: [
       "Processing millions of transaction records efficiently",
@@ -291,8 +248,8 @@ github: "https://github.com/ArbazCod/WebScrapeX",
     architecture: {
       frontend: "Streamlit",
       backend: "Python + Scikit-Learn",
-      models: "Random Forest + XGBoost",
-      visualization: "Plotly"
+      database: "CSV Data Upload",
+      deployment: "Streamlit Cloud"
     },
     challenges: [
       "Handling missing medical data gracefully",
@@ -354,18 +311,7 @@ github: "https://github.com/ArbazCod/WebScrapeX",
       "Cloud Deployment Workflows",
       "Frontend–Backend Integration"
     ],
-    techStack: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB Atlas",
-      "JWT",
-      "Cloudinary",
-      "Axios",
-      "Tailwind CSS",
-      "Render",
-      "Vercel"
-    ],
+    techStack: ["React", "Node.js", "Express", "MongoDB Atlas", "JWT", "Cloudinary", "Axios", "Tailwind CSS", "Render", "Vercel"],
     github: "https://github.com/ArbazCod/my-fullstack-app-frontend",
     backendGithub: "https://github.com/ArbazCod/my-fullstack-app-backend",
     image: "/images/portfolio.png",
@@ -373,79 +319,53 @@ github: "https://github.com/ArbazCod/WebScrapeX",
     views: 156,
     likes: 31
   },
-
   {
-  id: 8,
-
-  title: "Generative AI Video Production",
-
-  shortDesc: "Cinematic AI-powered video production with consistent characters, professional narration, and seamless scene continuity.",
-
-  description: "A creative Generative AI video production portfolio focused on developing cinematic, story-driven visual content. The workflow combines AI-assisted storytelling, prompt engineering, character consistency, scene design, voice narration, visual generation, and post-production to create polished videos with strong narrative and visual continuity.",
-
-  problemSolved: "Generating individual AI video clips is relatively easy, but maintaining character identity, visual consistency, narrative flow, and professional storytelling across multiple scenes is a significant challenge. This project focuses on producing cohesive AI-powered videos that feel like intentionally directed productions rather than disconnected generated clips.",
-
-  keyFeatures: [
-    "Cinematic AI Video Generation",
-    "Story-Driven Visual Production",
-    "Character Consistency Across Scenes",
-    "Scene-to-Scene Visual Continuity",
-    "Professional AI Voice Narration",
-    "Prompt Engineering & Scene Direction",
-    "AI-Assisted Storyboarding",
-    "Cinematic Composition & Visual Design",
-    "AI Video Editing & Post-Production",
-    "Social Media & Brand-Ready Content"
-  ],
-
-  architecture: {
-    preProduction: "Concept → Script → Storyboard → Scene Planning",
-    visualProduction: "Prompt Engineering → AI Image & Video Generation",
-    consistency: "Character, Environment & Visual Style Consistency",
-    narration: "AI Voice Generation → Narration Synchronization",
-    postProduction: "Video Editing → Scene Assembly → Final Production",
-    distribution: "Social Media & Digital Content Platforms"
+    id: 8,
+    title: "Generative AI Video Production",
+    shortDesc: "Cinematic AI-powered video production with consistent characters, professional narration, and seamless scene continuity.",
+    description: "A creative Generative AI video production portfolio focused on developing cinematic, story-driven visual content. The workflow combines AI-assisted storytelling, prompt engineering, character consistency, scene design, voice narration, visual generation, and post-production to create polished videos with strong narrative and visual continuity.",
+    problemSolved: "Generating individual AI video clips is relatively easy, but maintaining character identity, visual consistency, narrative flow, and professional storytelling across multiple scenes is a significant challenge. This project focuses on producing cohesive AI-powered videos that feel like intentionally directed productions rather than disconnected generated clips.",
+    keyFeatures: [
+      "Cinematic AI Video Generation",
+      "Story-Driven Visual Production",
+      "Character Consistency Across Scenes",
+      "Scene-to-Scene Visual Continuity",
+      "Professional AI Voice Narration",
+      "Prompt Engineering & Scene Direction",
+      "AI-Assisted Storyboarding",
+      "Cinematic Composition & Visual Design",
+      "AI Video Editing & Post-Production",
+      "Social Media & Brand-Ready Content"
+    ],
+    architecture: {
+      frontend: "Generative AI Tools",
+      backend: "AI Video Generation",
+      database: "Scene Planning & Storyboarding",
+      deployment: "Social Media & Digital Content Platforms"
+    },
+    challenges: [
+      "Maintaining consistent character identity throughout multiple scenes",
+      "Preserving visual style, environment, and composition across scenes",
+      "Creating natural transitions and continuity between generated clips",
+      "Synchronizing narration with visual storytelling",
+      "Transforming separate AI-generated scenes into a cohesive cinematic production"
+    ],
+    learnings: [
+      "Generative AI video production workflows",
+      "Advanced prompt engineering for visual consistency",
+      "Character and environment consistency techniques",
+      "AI-assisted storytelling and storyboarding",
+      "Cinematic scene composition and direction",
+      "AI voice narration and synchronization",
+      "AI video editing and post-production"
+    ],
+    techStack: ["Generative AI", "Prompt Engineering", "AI Video Generation", "AI Image Generation", "AI Voice Generation", "Storyboarding", "Video Editing", "Visual Storytelling"],
+    liveDemo: "https://www.facebook.com/profile.php?id=61592781398415",
+    image: "/images/framefable.png",
+    featured: true,
+    views: 20,
+    likes: 13
   },
-
-  challenges: [
-    "Maintaining consistent character identity throughout multiple scenes",
-    "Preserving visual style, environment, and composition across scenes",
-    "Creating natural transitions and continuity between generated clips",
-    "Synchronizing narration with visual storytelling",
-    "Transforming separate AI-generated scenes into a cohesive cinematic production"
-  ],
-
-  learnings: [
-    "Generative AI video production workflows",
-    "Advanced prompt engineering for visual consistency",
-    "Character and environment consistency techniques",
-    "AI-assisted storytelling and storyboarding",
-    "Cinematic scene composition and direction",
-    "AI voice narration and synchronization",
-    "AI video editing and post-production"
-  ],
-
-  techStack: [
-    "Generative AI",
-    "Prompt Engineering",
-    "AI Video Generation",
-    "AI Image Generation",
-    "AI Voice Generation",
-    "Storyboarding",
-    "Video Editing",
-    "Visual Storytelling"
-  ],
-
-  liveDemo: "https://www.facebook.com/profile.php?id=61592781398415",
-
-  image: "/images/framefable.png",
-
-  featured: true,
-
-  views: 20,
-
-  likes: 13
-},
   {
     id: 9,
     type: "certificate",
@@ -489,73 +409,51 @@ github: "https://github.com/ArbazCod/WebScrapeX",
     views: 0,
     likes: 0
   },
-
   {
-  id: 10,
-  type: "certificate",
-  title: "Prime (AI/ML)",
-  shortDesc: "Artificial Intelligence & Machine Learning Certification from Apna College.",
-
-  description:
-    "Successfully completed the Prime (AI/ML) program offered by Apna College. The program covered Python programming, data analysis, machine learning, deep learning fundamentals, and practical AI development through hands-on projects.",
-
-  problemSolved:
-    "Completed industry-oriented training focused on building machine learning models, analyzing real-world datasets, and applying modern AI workflows using Python and industry-standard machine learning libraries.",
-
-  keyFeatures: [
-    "Python Programming",
-    "Data Analysis",
-    "Machine Learning",
-    "Supervised Learning",
-    "Unsupervised Learning",
-    "Deep Learning Fundamentals",
-    "Model Evaluation",
-    "Hands-on AI Projects"
-  ],
-
-  architecture: {
-    frontend: "Jupyter Notebook",
-    backend: "Python + Scikit-learn",
-    database: "CSV Datasets",
-    deployment: "GitHub"
-  },
-
-  challenges: [
-    "Data preprocessing",
-    "Training machine learning models",
-    "Feature engineering",
-    "Model evaluation and optimization"
-  ],
-
-  learnings: [
-    "Python for AI",
-    "Data Analysis",
-    "Machine Learning Algorithms",
-    "Deep Learning Basics",
-    "Model Evaluation",
-    "AI Problem Solving"
-  ],
-
-  techStack: [
-    "Python",
-    "NumPy",
-    "Pandas",
-    "Matplotlib",
-    "Scikit-learn",
-    "Jupyter Notebook",
-    "Git",
-    "GitHub"
-  ],
-
-  issuer: "Apna College",
-  certificateId: "6a5c48a4bc34daa74c00b51a",
-
-  image: "/prime-ai-ml-certificate.png",
-
-  featured: true,
-  views: 0,
-  likes: 0
-}
+    id: 10,
+    type: "certificate",
+    title: "Prime (AI/ML)",
+    shortDesc: "Artificial Intelligence & Machine Learning Certification from Apna College.",
+    description: "Successfully completed the Prime (AI/ML) program offered by Apna College. The program covered Python programming, data analysis, machine learning, deep learning fundamentals, and practical AI development through hands-on projects.",
+    problemSolved: "Completed industry-oriented training focused on building machine learning models, analyzing real-world datasets, and applying modern AI workflows using Python and industry-standard machine learning libraries.",
+    keyFeatures: [
+      "Python Programming",
+      "Data Analysis",
+      "Machine Learning",
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Deep Learning Fundamentals",
+      "Model Evaluation",
+      "Hands-on AI Projects"
+    ],
+    architecture: {
+      frontend: "Jupyter Notebook",
+      backend: "Python + Scikit-learn",
+      database: "CSV Datasets",
+      deployment: "GitHub"
+    },
+    challenges: [
+      "Data preprocessing",
+      "Training machine learning models",
+      "Feature engineering",
+      "Model evaluation and optimization"
+    ],
+    learnings: [
+      "Python for AI",
+      "Data Analysis",
+      "Machine Learning Algorithms",
+      "Deep Learning Basics",
+      "Model Evaluation",
+      "AI Problem Solving"
+    ],
+    techStack: ["Python", "NumPy", "Pandas", "Matplotlib", "Scikit-learn", "Jupyter Notebook", "Git", "GitHub"],
+    issuer: "Apna College",
+    certificateId: "6a5c48a4bc34daa74c00b51a",
+    image: "/prime-ai-ml-certificate.png",
+    featured: true,
+    views: 0,
+    likes: 0
+  }
 ];
 
 const STORAGE_KEYS = {
@@ -579,8 +477,8 @@ const loadProjectData = () => {
     const stats = JSON.parse(saved);
     return initialProjects.map(project => ({
       ...project,
-      views: stats[project.id]?.views || project.views,
-      likes: stats[project.id]?.likes || project.likes
+      views: stats[project.id]?.views ?? project.views,
+      likes: stats[project.id]?.likes ?? project.likes
     }));
   }
   return initialProjects;
@@ -605,6 +503,680 @@ const saveUserLikes = (likedSet) => {
   localStorage.setItem(`${STORAGE_KEYS.USER_LIKES}_${userId}`, JSON.stringify([...likedSet]));
 };
 
+const GitHubIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
+  </svg>
+);
+
+// Create a separate CSS file content as a constant
+const styles = `
+  .projects-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    position: relative;
+    overflow-x: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .bg-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .header-section {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #a78bfa;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    background: #a78bfa;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+  }
+
+  .main-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #a78bfa 0%, #f472b6 50%, #fb923c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 32px;
+    margin-bottom: 60px;
+  }
+
+  .project-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(167, 139, 250, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .project-card.featured {
+    border-color: rgba(167, 139, 250, 0.6);
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(244, 114, 182, 0.05));
+  }
+
+  .project-card.like-animation {
+    animation: cardPop 0.3s ease-out;
+  }
+
+  @keyframes cardPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+
+  .card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.1), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .project-card:hover .card-glow {
+    opacity: 1;
+  }
+
+  .card-image {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.2), rgba(244, 114, 182, 0.1));
+  }
+
+  .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover .project-image {
+    transform: scale(1.05);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #a78bfa, #f472b6);
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.5px;
+    z-index: 1;
+    backdrop-filter: blur(4px);
+  }
+
+  .card-content {
+    padding: 24px;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 100px;
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+  }
+
+  .tech-tag:hover {
+    background: rgba(167, 139, 250, 0.3);
+    border-color: rgba(167, 139, 250, 0.5);
+  }
+
+  .more-tag {
+    background: rgba(167, 139, 250, 0.2);
+    border-color: rgba(167, 139, 250, 0.3);
+  }
+
+  .stats-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 8px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .stat-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .like-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.2s ease;
+  }
+
+  .heart-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .heart-icon {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .like-btn:hover .heart-icon {
+    transform: scale(1.15);
+    color: #f472b6;
+  }
+
+  .heart-active {
+    color: #f472b6;
+    fill: #f472b6;
+    animation: heartBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  @keyframes heartBounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+  }
+
+  .like-count {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
+  }
+
+  .like-btn.liked .like-count {
+    color: #f472b6;
+  }
+
+  .button-group {
+    display: flex;
+    gap: 12px;
+  }
+
+  .btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #a78bfa, #f472b6);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(167, 139, 250, 0.4);
+  }
+
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .footer-note {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-note p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .footer-icon, .footer-heart {
+    font-size: 0.9rem;
+  }
+
+  .footer-divider {
+    margin: 0 4px;
+  }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;
+    animation: fadeIn 0.2s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .modal-content {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 28px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .modal-close {
+    position: sticky;
+    top: 20px;
+    right: 20px;
+    float: right;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+    margin: 20px 20px 0 0;
+    backdrop-filter: blur(8px);
+  }
+
+  .modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+
+  .modal-header {
+    display: flex;
+    flex-direction: column;
+    clear: both;
+  }
+
+  .modal-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 28px 28px 0 0;
+  }
+
+  .modal-header-info {
+    padding: 28px 32px 20px;
+  }
+
+  .modal-header-info h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+  }
+
+  .modal-short-desc {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .modal-stats {
+    display: flex;
+    gap: 24px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .modal-stat, .modal-like-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .modal-like-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+  }
+
+  .modal-like-btn:hover {
+    color: #f472b6;
+  }
+
+  .modal-like-btn.liked {
+    color: #f472b6;
+  }
+
+  .modal-body {
+    padding: 0 32px 20px;
+  }
+
+  .modal-body section {
+    margin-bottom: 28px;
+  }
+
+  .modal-body h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #a78bfa;
+    margin-bottom: 12px;
+  }
+
+  .modal-body p, .modal-body li {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+  }
+
+  .modal-body ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .modal-body li {
+    margin-bottom: 6px;
+  }
+
+  .feature-list li, .architecture-list li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 24px;
+  }
+
+  .feature-list li::before {
+    content: "✅";
+    position: absolute;
+    left: 0;
+  }
+
+  .architecture-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #a78bfa;
+  }
+
+  .modal-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .modal-footer {
+    padding: 20px 32px 32px;
+    display: flex;
+    gap: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(167, 139, 250, 0.5);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(167, 139, 250, 0.8);
+  }
+
+  @media (max-width: 768px) {
+    .content-wrapper {
+      padding: 50px 20px;
+    }
+    
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .card-image {
+      height: 200px;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .modal-content {
+      max-height: 90vh;
+      border-radius: 20px;
+    }
+
+    .modal-image {
+      height: 200px;
+    }
+
+    .modal-header-info {
+      padding: 20px;
+    }
+
+    .modal-header-info h2 {
+      font-size: 1.5rem;
+    }
+
+    .modal-body {
+      padding: 0 20px 20px;
+    }
+
+    .modal-footer {
+      padding: 20px;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content-wrapper {
+      padding: 40px 16px;
+    }
+    
+    .projects-grid {
+      gap: 20px;
+    }
+
+    .card-image {
+      height: 180px;
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+    }
+
+    .button-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-note p {
+      font-size: 0.75rem;
+      gap: 4px;
+    }
+  }
+`;
+
 export default function Projects() {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -624,20 +1196,21 @@ export default function Projects() {
     loadData();
   }, []);
 
-  const updateProjectStats = useCallback((projectId, type, delta) => {
+  const updateProjectStats = useCallback((projectId, type, delta = 0) => {
     setProjects(prevProjects => {
       const updated = prevProjects.map(project => {
-        if (project.id === projectId) {
-          if (type === 'view') {
-            return { ...project, views: project.views + 1 };
-          }
-          if (type === 'like') {
-            return { ...project, likes: Math.max(0, project.likes + delta) };
-          }
+        if (project.id !== projectId) return project;
+        
+        if (type === 'view') {
+          return { ...project, views: project.views + 1 };
+        }
+        if (type === 'like') {
+          return { ...project, likes: Math.max(0, project.likes + delta) };
         }
         return project;
       });
-      saveProjectStats(updated);
+      
+      requestAnimationFrame(() => saveProjectStats(updated));
       return updated;
     });
   }, []);
@@ -645,28 +1218,29 @@ export default function Projects() {
   const handleLike = useCallback((e, projectId) => {
     e.stopPropagation();
     
-    const isLiked = likedProjects.has(projectId);
-    const delta = isLiked ? -1 : 1;
-    
     setLikedProjects(prev => {
+      const isLiked = prev.has(projectId);
       const newSet = new Set(prev);
+      
       if (isLiked) {
         newSet.delete(projectId);
+        updateProjectStats(projectId, 'like', -1);
       } else {
         newSet.add(projectId);
+        updateProjectStats(projectId, 'like', 1);
       }
+      
       saveUserLikes(newSet);
       return newSet;
     });
     
-    updateProjectStats(projectId, 'like', delta);
-    
     setAnimatingLike(projectId);
-    setTimeout(() => setAnimatingLike(null), 300);
-  }, [likedProjects, updateProjectStats]);
+    clearTimeout(window.likeTimeout);
+    window.likeTimeout = setTimeout(() => setAnimatingLike(null), 300);
+  }, [updateProjectStats]);
 
   const handleProjectClick = useCallback((project) => {
-    updateProjectStats(project.id, 'view', 0);
+    updateProjectStats(project.id, 'view');
     setSelectedProject(project);
     setIsModalOpen(true);
     document.body.style.overflow = 'hidden';
@@ -679,13 +1253,17 @@ export default function Projects() {
   }, []);
 
   useEffect(() => {
+    if (!isModalOpen) return;
+    
     const handleEsc = (e) => {
-      if (e.key === 'Escape' && isModalOpen) {
-        closeModal();
-      }
+      if (e.key === 'Escape') closeModal();
     };
+    
     window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+      clearTimeout(window.likeTimeout);
+    };
   }, [isModalOpen, closeModal]);
 
   if (isLoading) {
@@ -722,1028 +1300,406 @@ export default function Projects() {
   }
 
   return (
-    <div className="projects-container">
-      <div className="bg-gradient" />
-      <div className="content-wrapper">
-        {/* Header Section */}
-        <div className="header-section">
-          <div className="badge">
-            <span className="badge-dot"></span>
-            Project Showcase
-          </div>
-          <h1 className="main-title">
-            Building <span className="gradient-text">Real Solutions</span>
-          </h1>
-          <p className="subtitle">
-            Full-Stack Development, Machine Learning, and Data Analytics projects built to solve real-world problems.
-          </p>
-        </div>
-
-        {/* Projects Grid */}
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div
-              key={project.id}
-              className={`project-card ${project.featured ? "featured" : ""} ${animatingLike === project.id ? 'like-animation' : ''}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-              onClick={() => handleProjectClick(project)}
-            >
-              <div className="card-glow" />
-              
-              <div className="card-image">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-image"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.src = "https://via.placeholder.com/400x220?text=Project+Preview";
-                  }}
-                />
-                {project.featured && (
-                  <span className="featured-badge">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                    Featured
-                  </span>
-                )}
-              </div>
-
-              <div className="card-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.shortDesc}</p>
-                
-                <div className="tech-stack">
-                  {project.techStack.slice(0, 4).map((tech, i) => (
-                    <span key={i} className="tech-tag">{tech}</span>
-                  ))}
-                  {project.techStack.length > 4 && (
-                    <span className="tech-tag more-tag">+{project.techStack.length - 4}</span>
-                  )}
-                </div>
-
-                <div className="stats-row">
-                  <div className="stat">
-                    <svg className="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                      <circle cx="12" cy="12" r="3" />
-                    </svg>
-                    <span>{project.views.toLocaleString()}</span>
-                  </div>
-                  <button 
-                    className={`like-btn ${likedProjects.has(project.id) ? 'liked' : ''}`}
-                    onClick={(e) => handleLike(e, project.id)}
-                    aria-label={likedProjects.has(project.id) ? "Unlike" : "Like"}
-                  >
-                    <div className="heart-container">
-                      <svg 
-                        className={`heart-icon ${likedProjects.has(project.id) ? 'heart-active' : ''}`}
-                        viewBox="0 0 24 24" 
-                        fill={likedProjects.has(project.id) ? "currentColor" : "none"} 
-                        stroke="currentColor" 
-                        strokeWidth="2"
-                      >
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                      </svg>
-                      <span className="like-count">{project.likes}</span>
-                    </div>
-                  </button>
-                </div>
-
-                <div className="card-footer">
-                  <div className="button-group">
-                    {project.type === "certificate" ? (
-                      <button
-                        className="btn btn-primary"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleProjectClick(project);
-                        }}
-                      >
-                        View Certificate
-                      </button>
-                    ) : (
-                      <>
-                        {project.liveDemo && (
-                          <a
-                            href={project.liveDemo}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="btn btn-primary"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                              <polyline points="15 3 21 3 21 9" />
-                              <line x1="10" y1="14" x2="21" y2="3" />
-                            </svg>
-                            Live Demo
-                          </a>
-                        )}
-
-                        {project.backendGithub ? (
-                          <div style={{ display: 'flex', gap: '8px', flex: 1 }}>
-                            <a
-                              href={project.github}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="btn btn-secondary"
-                              onClick={(e) => e.stopPropagation()}
-                              style={{ flex: 1 }}
-                            >
-                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
-                              </svg>
-                              Frontend
-                            </a>
-                            <a
-                              href={project.backendGithub}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="btn btn-secondary"
-                              onClick={(e) => e.stopPropagation()}
-                              style={{ flex: 1 }}
-                            >
-                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
-                              </svg>
-                              Backend
-                            </a>
-                          </div>
-                        ) : (
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="btn btn-secondary"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
-                            </svg>
-                            GitHub
-                          </a>
-                        )}
-                      </>
-                    )}
-                  </div>
-                </div>
-              </div>
+    <>
+      <style>{styles}</style>
+      <div className="projects-container">
+        <div className="bg-gradient" />
+        <div className="content-wrapper">
+          <div className="header-section">
+            <div className="badge">
+              <span className="badge-dot"></span>
+              Project Showcase
             </div>
-          ))}
+            <h1 className="main-title">
+              Building <span className="gradient-text">Real Solutions</span>
+            </h1>
+            <p className="subtitle">
+              Full-Stack Development, Machine Learning, and Data Analytics projects built to solve real-world problems.
+            </p>
+          </div>
+
+          <div className="projects-grid">
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                index={index}
+                isLiked={likedProjects.has(project.id)}
+                isAnimating={animatingLike === project.id}
+                onLike={handleLike}
+                onClick={handleProjectClick}
+              />
+            ))}
+          </div>
+
+          <div className="footer-note">
+            <p>
+              <span className="footer-icon">✨</span> 
+              Click any project card for detailed case study 
+              <span className="footer-divider">•</span> 
+              <span className="footer-heart">❤️</span> Toggle likes on any project
+            </p>
+          </div>
         </div>
 
-        <div className="footer-note">
-          <p>
-            <span className="footer-icon">✨</span> 
-            Click any project card for detailed case study 
-            <span className="footer-divider">•</span> 
-            <span className="footer-heart">❤️</span> Toggle likes on any project
-          </p>
-        </div>
+        {isModalOpen && selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            isLiked={likedProjects.has(selectedProject.id)}
+            onClose={closeModal}
+            onLike={handleLike}
+          />
+        )}
       </div>
-
-      {/* Modal */}
-      {isModalOpen && selectedProject && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal} aria-label="Close modal">
-              ×
-            </button>
-            
-            <div className="modal-header">
-              <img src={selectedProject.image} alt={selectedProject.title} className="modal-image" />
-              <div className="modal-header-info">
-                <h2>{selectedProject.title}</h2>
-                <p className="modal-short-desc">{selectedProject.shortDesc}</p>
-                <div className="modal-stats">
-                  <span className="modal-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                      <circle cx="12" cy="12" r="3" />
-                    </svg>
-                    {selectedProject.views.toLocaleString()} Views
-                  </span>
-                  <button 
-                    className={`modal-like-btn ${likedProjects.has(selectedProject.id) ? 'liked' : ''}`}
-                    onClick={(e) => handleLike(e, selectedProject.id)}
-                  >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill={likedProjects.has(selectedProject.id) ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2">
-                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                    </svg>
-                    {selectedProject.likes} Likes
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {selectedProject.type === "certificate" && (
-              <div style={{ padding: "20px" }}>
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  style={{
-                    width: "100%",
-                    borderRadius: "12px",
-                    objectFit: "contain"
-                  }}
-                />
-              </div>
-            )}
-
-            <div className="modal-body">
-              <section>
-                <h3>📌 Overview</h3>
-                <p>{selectedProject.description}</p>
-              </section>
-
-              <section>
-                <h3>🎯 Problem Solved</h3>
-                <p>{selectedProject.problemSolved}</p>
-              </section>
-
-              <section>
-                <h3>✨ Key Features</h3>
-                <ul className="feature-list">
-                  {selectedProject.keyFeatures.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
-              </section>
-
-              <section>
-                <h3>🏗️ Architecture</h3>
-                <ul className="architecture-list">
-                  <li><strong>Frontend:</strong> {selectedProject.architecture.frontend}</li>
-                  <li><strong>Backend:</strong> {selectedProject.architecture.backend}</li>
-                  <li><strong>Database:</strong> {selectedProject.architecture.database}</li>
-                  {selectedProject.architecture.deployment && (
-                    <li><strong>Deployment:</strong> {selectedProject.architecture.deployment}</li>
-                  )}
-                </ul>
-              </section>
-
-              <section>
-                <h3>⚠️ Challenges Faced</h3>
-                <ul>
-                  {selectedProject.challenges.map((challenge, i) => (
-                    <li key={i}>{challenge}</li>
-                  ))}
-                </ul>
-              </section>
-
-              <section>
-                <h3>📚 What I Learned</h3>
-                <ul>
-                  {selectedProject.learnings.map((learning, i) => (
-                    <li key={i}>{learning}</li>
-                  ))}
-                </ul>
-              </section>
-
-              <section>
-                <h3>🛠️ Tech Stack</h3>
-                <div className="modal-tech-stack">
-                  {selectedProject.techStack.map((tech, i) => (
-                    <span key={i} className="tech-tag">{tech}</span>
-                  ))}
-                </div>
-              </section>
-            </div>
-
-            {selectedProject.type !== "certificate" && (
-              <div className="modal-footer">
-                {selectedProject.liveDemo && (
-                  <a href={selectedProject.liveDemo} target="_blank" rel="noreferrer" className="btn btn-primary">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                      <polyline points="15 3 21 3 21 9" />
-                      <line x1="10" y1="14" x2="21" y2="3" />
-                    </svg>
-                    Live Demo
-                  </a>
-                )}
-                
-                {selectedProject.backendGithub ? (
-                  <>
-                    <a href={selectedProject.github} target="_blank" rel="noreferrer" className="btn btn-secondary">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
-                      </svg>
-                      Frontend Repository
-                    </a>
-                    <a href={selectedProject.backendGithub} target="_blank" rel="noreferrer" className="btn btn-secondary">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
-                      </svg>
-                      Backend Repository
-                    </a>
-                  </>
-                ) : (
-                  <a href={selectedProject.github} target="_blank" rel="noreferrer" className="btn btn-secondary">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13" />
-                    </svg>
-                    GitHub Repository
-                  </a>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
-      <style>{`
-        .projects-container {
-          min-height: 100vh;
-          background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-          position: relative;
-          overflow-x: hidden;
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-
-        .bg-gradient {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: 
-            radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
-            radial-gradient(circle at 40% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
-          pointer-events: none;
-        }
-
-        .content-wrapper {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 80px 40px;
-          position: relative;
-          z-index: 2;
-        }
-
-        .header-section {
-          text-align: center;
-          margin-bottom: 70px;
-        }
-
-        .badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          padding: 6px 16px;
-          background: rgba(255, 255, 255, 0.08);
-          backdrop-filter: blur(10px);
-          border-radius: 100px;
-          font-size: 13px;
-          font-weight: 500;
-          color: #a78bfa;
-          letter-spacing: 0.5px;
-          margin-bottom: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .badge-dot {
-          width: 6px;
-          height: 6px;
-          background: #a78bfa;
-          border-radius: 50%;
-          animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        .main-title {
-          font-size: clamp(2rem, 5vw, 3.5rem);
-          font-weight: 800;
-          color: white;
-          margin-bottom: 20px;
-          letter-spacing: -0.02em;
-        }
-
-        .gradient-text {
-          background: linear-gradient(135deg, #a78bfa 0%, #f472b6 50%, #fb923c 100%);
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-        }
-
-        .subtitle {
-          font-size: clamp(1rem, 3vw, 1.2rem);
-          color: rgba(255, 255, 255, 0.7);
-          max-width: 600px;
-          margin: 0 auto;
-          line-height: 1.6;
-        }
-
-        .projects-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-          gap: 32px;
-          margin-bottom: 60px;
-        }
-
-        @media (max-width: 768px) {
-          .content-wrapper {
-            padding: 50px 20px;
-          }
-          
-          .projects-grid {
-            grid-template-columns: 1fr;
-            gap: 24px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .content-wrapper {
-            padding: 40px 16px;
-          }
-          
-          .projects-grid {
-            gap: 20px;
-          }
-        }
-
-        .project-card {
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(10px);
-          border-radius: 24px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          overflow: hidden;
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          position: relative;
-          animation: fadeInUp 0.6s ease-out forwards;
-          opacity: 0;
-          cursor: pointer;
-        }
-
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .project-card:hover {
-          transform: translateY(-8px);
-          background: rgba(255, 255, 255, 0.08);
-          border-color: rgba(167, 139, 250, 0.5);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-card.featured {
-          border-color: rgba(167, 139, 250, 0.6);
-          background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(244, 114, 182, 0.05));
-        }
-
-        .project-card.like-animation {
-          animation: cardPop 0.3s ease-out;
-        }
-
-        @keyframes cardPop {
-          0% { transform: scale(1); }
-          50% { transform: scale(1.02); }
-          100% { transform: scale(1); }
-        }
-
-        .card-glow {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 100%;
-          background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.1), transparent 70%);
-          opacity: 0;
-          transition: opacity 0.4s ease;
-          pointer-events: none;
-        }
-
-        .project-card:hover .card-glow {
-          opacity: 1;
-        }
-
-        .card-image {
-          height: 220px;
-          overflow: hidden;
-          position: relative;
-          background: linear-gradient(135deg, rgba(167, 139, 250, 0.2), rgba(244, 114, 182, 0.1));
-        }
-
-        @media (max-width: 768px) {
-          .card-image {
-            height: 200px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .card-image {
-            height: 180px;
-          }
-        }
-
-        .project-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.3s ease;
-        }
-
-        .project-card:hover .project-image {
-          transform: scale(1.05);
-        }
-
-        .featured-badge {
-          position: absolute;
-          top: 16px;
-          right: 16px;
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          background: linear-gradient(135deg, #a78bfa, #f472b6);
-          padding: 6px 12px;
-          border-radius: 100px;
-          font-size: 11px;
-          font-weight: 600;
-          color: white;
-          letter-spacing: 0.5px;
-          z-index: 1;
-          backdrop-filter: blur(4px);
-        }
-
-        .card-content {
-          padding: 24px;
-        }
-
-        @media (max-width: 768px) {
-          .card-content {
-            padding: 20px;
-          }
-        }
-
-        .project-title {
-          font-size: 1.5rem;
-          font-weight: 700;
-          color: white;
-          margin-bottom: 12px;
-          letter-spacing: -0.01em;
-        }
-
-        @media (max-width: 480px) {
-          .project-title {
-            font-size: 1.3rem;
-          }
-        }
-
-        .project-description {
-          font-size: 0.9rem;
-          color: rgba(255, 255, 255, 0.7);
-          line-height: 1.6;
-          margin-bottom: 16px;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-
-        .tech-stack {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-          margin-bottom: 16px;
-        }
-
-        .tech-tag {
-          font-size: 0.75rem;
-          padding: 5px 12px;
-          background: rgba(255, 255, 255, 0.08);
-          border-radius: 100px;
-          color: rgba(255, 255, 255, 0.8);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          transition: all 0.2s ease;
-        }
-
-        .tech-tag:hover {
-          background: rgba(167, 139, 250, 0.3);
-          border-color: rgba(167, 139, 250, 0.5);
-        }
-
-        .more-tag {
-          background: rgba(167, 139, 250, 0.2);
-          border-color: rgba(167, 139, 250, 0.3);
-        }
-
-        .stats-row {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 16px;
-          margin-bottom: 20px;
-          padding: 8px 0;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .stat {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 0.85rem;
-          color: rgba(255, 255, 255, 0.6);
-        }
-
-        .stat-icon {
-          width: 16px;
-          height: 16px;
-        }
-
-        .like-btn {
-          background: none;
-          border: none;
-          cursor: pointer;
-          padding: 0;
-          transition: all 0.2s ease;
-        }
-
-        .heart-container {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-        }
-
-        .heart-icon {
-          width: 20px;
-          height: 20px;
-          transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          color: rgba(255, 255, 255, 0.6);
-        }
-
-        .like-btn:hover .heart-icon {
-          transform: scale(1.15);
-          color: #f472b6;
-        }
-
-        .heart-active {
-          color: #f472b6;
-          fill: #f472b6;
-          animation: heartBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        @keyframes heartBounce {
-          0% { transform: scale(1); }
-          50% { transform: scale(1.4); }
-          100% { transform: scale(1); }
-        }
-
-        .like-count {
-          font-size: 0.85rem;
-          color: rgba(255, 255, 255, 0.7);
-          transition: all 0.2s ease;
-        }
-
-        .like-btn.liked .like-count {
-          color: #f472b6;
-        }
-
-        .button-group {
-          display: flex;
-          gap: 12px;
-        }
-
-        @media (max-width: 480px) {
-          .button-group {
-            flex-direction: column;
-            gap: 10px;
-          }
-        }
-
-        .btn {
-          flex: 1;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-          padding: 10px 20px;
-          border-radius: 12px;
-          font-size: 0.85rem;
-          font-weight: 600;
-          text-decoration: none;
-          transition: all 0.2s ease;
-          cursor: pointer;
-          border: none;
-        }
-
-        .btn-primary {
-          background: linear-gradient(135deg, #a78bfa, #f472b6);
-          color: white;
-        }
-
-        .btn-primary:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 5px 15px rgba(167, 139, 250, 0.4);
-        }
-
-        .btn-secondary {
-          background: rgba(255, 255, 255, 0.1);
-          color: white;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-secondary:hover {
-          background: rgba(255, 255, 255, 0.2);
-          transform: translateY(-2px);
-        }
-
-        .footer-note {
-          text-align: center;
-          padding-top: 40px;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .footer-note p {
-          color: rgba(255, 255, 255, 0.5);
-          font-size: 0.85rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-          flex-wrap: wrap;
-        }
-
-        .footer-icon, .footer-heart {
-          font-size: 0.9rem;
-        }
-
-        .footer-divider {
-          margin: 0 4px;
-        }
-
-        @media (max-width: 480px) {
-          .footer-note p {
-            font-size: 0.75rem;
-            gap: 4px;
-          }
-        }
-
-        .modal-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: rgba(0, 0, 0, 0.9);
-          backdrop-filter: blur(12px);
-          z-index: 1000;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 20px;
-          overflow-y: auto;
-          animation: fadeIn 0.2s ease;
-        }
-
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-
-        .modal-content {
-          background: linear-gradient(135deg, #1a1a2e, #16213e);
-          border-radius: 28px;
-          max-width: 900px;
-          width: 100%;
-          max-height: 85vh;
-          overflow-y: auto;
-          position: relative;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-          animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @media (max-width: 768px) {
-          .modal-content {
-            max-height: 90vh;
-            border-radius: 20px;
-          }
-        }
-
-        .modal-close {
-          position: sticky;
-          top: 20px;
-          right: 20px;
-          float: right;
-          background: rgba(255, 255, 255, 0.1);
-          border: none;
-          font-size: 28px;
-          cursor: pointer;
-          color: white;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 0.2s ease;
-          z-index: 10;
-          margin: 20px 20px 0 0;
-          backdrop-filter: blur(8px);
-        }
-
-        .modal-close:hover {
-          background: rgba(255, 255, 255, 0.2);
-          transform: scale(1.05);
-        }
-
-        .modal-header {
-          display: flex;
-          flex-direction: column;
-          clear: both;
-        }
-
-        .modal-image {
-          width: 100%;
-          height: 280px;
-          object-fit: cover;
-          border-radius: 28px 28px 0 0;
-        }
-
-        @media (max-width: 768px) {
-          .modal-image {
-            height: 200px;
-          }
-        }
-
-        .modal-header-info {
-          padding: 28px 32px 20px;
-        }
-
-        @media (max-width: 768px) {
-          .modal-header-info {
-            padding: 20px;
-          }
-        }
-
-        .modal-header-info h2 {
-          font-size: 2rem;
-          font-weight: 700;
-          color: white;
-          margin-bottom: 12px;
-        }
-
-        @media (max-width: 768px) {
-          .modal-header-info h2 {
-            font-size: 1.5rem;
-          }
-        }
-
-        .modal-short-desc {
-          font-size: 1rem;
-          color: rgba(255, 255, 255, 0.7);
-          margin-bottom: 16px;
-          line-height: 1.5;
-        }
-
-        .modal-stats {
-          display: flex;
-          gap: 24px;
-          font-size: 0.9rem;
-          color: rgba(255, 255, 255, 0.6);
-        }
-
-        .modal-stat, .modal-like-btn {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-        }
-
-        .modal-like-btn {
-          background: none;
-          border: none;
-          color: rgba(255, 255, 255, 0.6);
-          cursor: pointer;
-          padding: 0;
-          font-size: 0.9rem;
-          transition: all 0.2s ease;
-        }
-
-        .modal-like-btn:hover {
-          color: #f472b6;
-        }
-
-        .modal-like-btn.liked {
-          color: #f472b6;
-        }
-
-        .modal-body {
-          padding: 0 32px 20px;
-        }
-
-        @media (max-width: 768px) {
-          .modal-body {
-            padding: 0 20px 20px;
-          }
-        }
-
-        .modal-body section {
-          margin-bottom: 28px;
-        }
-
-        .modal-body h3 {
-          font-size: 1.25rem;
-          font-weight: 600;
-          color: #a78bfa;
-          margin-bottom: 12px;
-        }
-
-        .modal-body p, .modal-body li {
-          color: rgba(255, 255, 255, 0.8);
-          line-height: 1.6;
-        }
-
-        .modal-body ul {
-          margin: 0;
-          padding-left: 20px;
-        }
-
-        .modal-body li {
-          margin-bottom: 6px;
-        }
-
-        .feature-list li, .architecture-list li {
-          list-style-type: none;
-          position: relative;
-          padding-left: 24px;
-        }
-
-        .feature-list li::before {
-          content: "✅";
-          position: absolute;
-          left: 0;
-        }
-
-        .architecture-list li::before {
-          content: "▹";
-          position: absolute;
-          left: 0;
-          color: #a78bfa;
-        }
-
-        .modal-tech-stack {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-        }
-
-        .modal-footer {
-          padding: 20px 32px 32px;
-          display: flex;
-          gap: 16px;
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        @media (max-width: 768px) {
-          .modal-footer {
-            padding: 20px;
-            flex-direction: column;
-          }
-        }
-
-        ::-webkit-scrollbar {
-          width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.05);
-        }
-
-        ::-webkit-scrollbar-thumb {
-          background: rgba(167, 139, 250, 0.5);
-          border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-          background: rgba(167, 139, 250, 0.8);
-        }
-      `}</style>
-    </div>
+    </>
   );
 }
+
+const ProjectCard = React.memo(({ project, index, isLiked, isAnimating, onLike, onClick }) => {
+  const handleCardClick = useCallback(() => onClick(project), [onClick, project]);
+  const handleLikeClick = useCallback((e) => onLike(e, project.id), [onLike, project.id]);
+
+  return (
+    <div
+      className={`project-card ${project.featured ? "featured" : ""} ${isAnimating ? 'like-animation' : ''}`}
+      style={{ animationDelay: `${index * 0.1}s` }}
+      onClick={handleCardClick}
+    >
+      <div className="card-glow" />
+      
+      <div className="card-image">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="project-image"
+          loading="lazy"
+          onError={(e) => {
+            e.target.src = "https://via.placeholder.com/400x220?text=Project+Preview";
+          }}
+        />
+        {project.featured && (
+          <span className="featured-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            Featured
+          </span>
+        )}
+      </div>
+
+      <div className="card-content">
+        <h3 className="project-title">{project.title}</h3>
+        <p className="project-description">{project.shortDesc}</p>
+        
+        <div className="tech-stack">
+          {project.techStack.slice(0, 4).map((tech, i) => (
+            <span key={i} className="tech-tag">{tech}</span>
+          ))}
+          {project.techStack.length > 4 && (
+            <span className="tech-tag more-tag">+{project.techStack.length - 4}</span>
+          )}
+        </div>
+
+        <div className="stats-row">
+          <div className="stat">
+            <svg className="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+            <span>{project.views.toLocaleString()}</span>
+          </div>
+          <button 
+            className={`like-btn ${isLiked ? 'liked' : ''}`}
+            onClick={handleLikeClick}
+            aria-label={isLiked ? "Unlike" : "Like"}
+          >
+            <div className="heart-container">
+              <svg 
+                className={`heart-icon ${isLiked ? 'heart-active' : ''}`}
+                viewBox="0 0 24 24" 
+                fill={isLiked ? "currentColor" : "none"} 
+                stroke="currentColor" 
+                strokeWidth="2"
+              >
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+              <span className="like-count">{project.likes}</span>
+            </div>
+          </button>
+        </div>
+
+        <div className="card-footer">
+          <ProjectButtons project={project} onClick={onClick} />
+        </div>
+      </div>
+    </div>
+  );
+});
+
+const ProjectButtons = React.memo(({ project, onClick }) => {
+  if (project.type === "certificate") {
+    return (
+      <button
+        className="btn btn-primary"
+        onClick={(e) => {
+          e.stopPropagation();
+          onClick(project);
+        }}
+      >
+        View Certificate
+      </button>
+    );
+  }
+
+  return (
+    <div className="button-group">
+      {project.liveDemo && (
+        <a
+          href={project.liveDemo}
+          target="_blank"
+          rel="noreferrer"
+          className="btn btn-primary"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+          Live Demo
+        </a>
+      )}
+
+      {project.backendGithub ? (
+        <div style={{ display: 'flex', gap: '8px', flex: 1 }}>
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-secondary"
+            onClick={(e) => e.stopPropagation()}
+            style={{ flex: 1 }}
+          >
+            <GitHubIcon />
+            Frontend
+          </a>
+          <a
+            href={project.backendGithub}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-secondary"
+            onClick={(e) => e.stopPropagation()}
+            style={{ flex: 1 }}
+          >
+            <GitHubIcon />
+            Backend
+          </a>
+        </div>
+      ) : project.github ? (
+        <a 
+          href={project.github} 
+          target="_blank"
+          rel="noreferrer"
+          className="btn btn-secondary"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <GitHubIcon />
+          GitHub
+        </a>
+      ) : null}
+    </div>
+  );
+});
+
+const ProjectModal = React.memo(({ project, isLiked, onClose, onLike }) => {
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [onClose]);
+
+  const handleModalLike = useCallback((e) => onLike(e, project.id), [onLike, project.id]);
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <button className="modal-close" onClick={onClose} aria-label="Close modal">
+          ×
+        </button>
+        
+        <div className="modal-header">
+          <img src={project.image} alt={project.title} className="modal-image" />
+          <div className="modal-header-info">
+            <h2>{project.title}</h2>
+            <p className="modal-short-desc">{project.shortDesc}</p>
+            <div className="modal-stats">
+              <span className="modal-stat">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                {project.views.toLocaleString()} Views
+              </span>
+              <button 
+                className={`modal-like-btn ${isLiked ? 'liked' : ''}`}
+                onClick={handleModalLike}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill={isLiked ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+                {project.likes} Likes
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {project.type === "certificate" && (
+          <div style={{ padding: "20px" }}>
+            <img
+              src={project.image}
+              alt={project.title}
+              style={{
+                width: "100%",
+                borderRadius: "12px",
+                objectFit: "contain"
+              }}
+            />
+          </div>
+        )}
+
+        <div className="modal-body">
+          <section>
+            <h3>📌 Overview</h3>
+            <p>{project.description}</p>
+          </section>
+
+          <section>
+            <h3>🎯 Problem Solved</h3>
+            <p>{project.problemSolved}</p>
+          </section>
+
+          <section>
+            <h3>✨ Key Features</h3>
+            <ul className="feature-list">
+              {project.keyFeatures.map((feature, i) => (
+                <li key={i}>{feature}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h3>🏗️ Architecture</h3>
+            <ul className="architecture-list">
+              <li><strong>Frontend:</strong> {project.architecture.frontend}</li>
+              <li><strong>Backend:</strong> {project.architecture.backend}</li>
+              <li><strong>Database:</strong> {project.architecture.database}</li>
+              {project.architecture.deployment && (
+                <li><strong>Deployment:</strong> {project.architecture.deployment}</li>
+              )}
+            </ul>
+          </section>
+
+          <section>
+            <h3>⚠️ Challenges Faced</h3>
+            <ul>
+              {project.challenges.map((challenge, i) => (
+                <li key={i}>{challenge}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h3>📚 What I Learned</h3>
+            <ul>
+              {project.learnings.map((learning, i) => (
+                <li key={i}>{learning}</li>
+              ))}
+            </ul>
+          </section>
+
+          {project.performance && (
+            <section>
+              <h3>📊 Performance Metrics</h3>
+              <div style={{ 
+                display: 'grid', 
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+                gap: '12px',
+                marginTop: '12px'
+              }}>
+                {Object.entries(project.performance).map(([key, value]) => (
+                  <div key={key} style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    padding: '12px',
+                    borderRadius: '8px',
+                    textAlign: 'center'
+                  }}>
+                    <div style={{ 
+                      fontSize: '1.2rem', 
+                      fontWeight: '700', 
+                      color: '#a78bfa',
+                      marginBottom: '4px'
+                    }}>
+                      {value}
+                    </div>
+                    <div style={{ 
+                      fontSize: '0.8rem', 
+                      color: 'rgba(255, 255, 255, 0.6)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px'
+                    }}>
+                      {key.replace(/([A-Z])/g, ' $1').trim()}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          <section>
+            <h3>🛠️ Tech Stack</h3>
+            <div className="modal-tech-stack">
+              {project.techStack.map((tech, i) => (
+                <span key={i} className="tech-tag">{tech}</span>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        {project.type !== "certificate" && (
+          <div className="modal-footer">
+            {project.liveDemo && (
+              <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+                Live Demo
+              </a>
+            )}
+            
+            {project.backendGithub ? (
+              <>
+                <a href={project.github} target="_blank" rel="noreferrer" className="btn btn-secondary">
+                  <GitHubIcon />
+                  Frontend Repository
+                </a>
+                <a href={project.backendGithub} target="_blank" rel="noreferrer" className="btn btn-secondary">
+                  <GitHubIcon />
+                  Backend Repository
+                </a>
+              </>
+            ) : (
+              <a href={project.github} target="_blank" rel="noreferrer" className="btn btn-secondary">
+                <GitHubIcon />
+                GitHub Repository
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+});
